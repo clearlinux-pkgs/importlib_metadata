@@ -4,7 +4,7 @@
 #
 Name     : importlib_metadata
 Version  : 0.17
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/0e/e0/9b28879fb8e2b7062279ef50b489a9e3b49d850df068d90571a4881905ee/importlib_metadata-0.17.tar.gz
 Source0  : https://files.pythonhosted.org/packages/0e/e0/9b28879fb8e2b7062279ef50b489a9e3b49d850df068d90571a4881905ee/importlib_metadata-0.17.tar.gz
 Summary  : Read metadata from Python packages
@@ -16,6 +16,7 @@ Requires: importlib_metadata-python3 = %{version}-%{release}
 Requires: configparser
 Requires: contextlib2
 Requires: pathlib2
+Requires: zipp
 BuildRequires : buildreq-distutils3
 BuildRequires : configparser
 BuildRequires : contextlib2
@@ -23,15 +24,21 @@ BuildRequires : pathlib2
 BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pytest
+BuildRequires : setuptools_scm
 BuildRequires : tox
 BuildRequires : virtualenv
+BuildRequires : zipp
 
 %description
-=========================
 ``importlib_metadata``
-=========================
-``importlib_metadata`` is a library to access the metadata for a Python
-package.  It is intended to be ported to Python 3.8.
+        =========================
+        
+        ``importlib_metadata`` is a library to access the metadata for a Python
+        package.  It is intended to be ported to Python 3.8.
+        
+        
+        Usage
+        =====
 
 %package license
 Summary: license components for the importlib_metadata package.
@@ -67,7 +74,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1559666476
+export SOURCE_DATE_EPOCH=1559927912
+export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
 export FFLAGS="$CFLAGS -fno-lto "
