@@ -4,7 +4,7 @@
 #
 Name     : importlib_metadata
 Version  : 0.23
-Release  : 14
+Release  : 15
 URL      : https://files.pythonhosted.org/packages/5d/44/636bcd15697791943e2dedda0dbe098d8530a38d113b202817133e0b06c0/importlib_metadata-0.23.tar.gz
 Source0  : https://files.pythonhosted.org/packages/5d/44/636bcd15697791943e2dedda0dbe098d8530a38d113b202817133e0b06c0/importlib_metadata-0.23.tar.gz
 Summary  : Read metadata from Python packages
@@ -13,12 +13,10 @@ License  : Apache-2.0
 Requires: importlib_metadata-license = %{version}-%{release}
 Requires: importlib_metadata-python = %{version}-%{release}
 Requires: importlib_metadata-python3 = %{version}-%{release}
-Requires: configparser
 Requires: contextlib2
 Requires: pathlib2
 Requires: zipp
 BuildRequires : buildreq-distutils3
-BuildRequires : configparser
 BuildRequires : contextlib2
 BuildRequires : pathlib2
 BuildRequires : pluggy
@@ -30,11 +28,15 @@ BuildRequires : virtualenv
 BuildRequires : zipp
 
 %description
-=========================
 ``importlib_metadata``
-=========================
-``importlib_metadata`` is a library to access the metadata for a Python
-package.  It is intended to be ported to Python 3.8.
+        =========================
+        
+        ``importlib_metadata`` is a library to access the metadata for a Python
+        package.  It is intended to be ported to Python 3.8.
+        
+        
+        Usage
+        =====
 
 %package license
 Summary: license components for the importlib_metadata package.
@@ -64,14 +66,14 @@ python3 components for the importlib_metadata package.
 
 %prep
 %setup -q -n importlib_metadata-0.23
+cd %{_builddir}/importlib_metadata-0.23
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568863044
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1573847848
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -84,7 +86,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/importlib_metadata
-cp LICENSE %{buildroot}/usr/share/package-licenses/importlib_metadata/LICENSE
+cp %{_builddir}/importlib_metadata-0.23/LICENSE %{buildroot}/usr/share/package-licenses/importlib_metadata/da4dc954bbc3ab0893517cb1d7af5598f7a3daf4
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -95,7 +97,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/importlib_metadata/LICENSE
+/usr/share/package-licenses/importlib_metadata/da4dc954bbc3ab0893517cb1d7af5598f7a3daf4
 
 %files python
 %defattr(-,root,root,-)
