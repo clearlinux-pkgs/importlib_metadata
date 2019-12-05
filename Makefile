@@ -1,5 +1,5 @@
 PKG_NAME := importlib_metadata
-URL = https://files.pythonhosted.org/packages/e6/3f/8a381c289dbe14a87be9d6598017b40ac425884a2f906ff35693c3cb262d/importlib_metadata-1.1.0.tar.gz
+URL = https://files.pythonhosted.org/packages/9b/42/86a31ce5fd7e3c5fc9071cec95d0aab11deb2fd63eed27315f520d120bfd/importlib_metadata-1.2.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
