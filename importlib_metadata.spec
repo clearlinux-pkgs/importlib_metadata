@@ -4,7 +4,7 @@
 #
 Name     : importlib_metadata
 Version  : 1.5.0
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/0d/e4/638f3bde506b86f62235c595073066e7b8472fc9ee2b8c6491347f31d726/importlib_metadata-1.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/0d/e4/638f3bde506b86f62235c595073066e7b8472fc9ee2b8c6491347f31d726/importlib_metadata-1.5.0.tar.gz
 Summary  : Read metadata from Python packages
@@ -29,10 +29,41 @@ BuildRequires : zipp
 
 %description
 =========================
-``importlib_metadata``
+ ``importlib_metadata``
 =========================
+
 ``importlib_metadata`` is a library to access the metadata for a Python
 package.  It is intended to be ported to Python 3.8.
+
+
+Usage
+=====
+
+See the `online documentation <https://importlib_metadata.readthedocs.io/>`_
+for usage details.
+
+`Finder authors
+<https://docs.python.org/3/reference/import.html#finders-and-loaders>`_ can
+also add support for custom package installers.  See the above documentation
+for details.
+
+
+Caveats
+=======
+
+This project primarily supports third-party packages installed by PyPA
+tools (or other conforming packages). It does not support:
+
+- Packages in the stdlib.
+- Packages installed without metadata.
+
+Project details
+===============
+
+ * Project home: https://gitlab.com/python-devs/importlib_metadata
+ * Report bugs at: https://gitlab.com/python-devs/importlib_metadata/issues
+ * Code hosting: https://gitlab.com/python-devs/importlib_metadata.git
+ * Documentation: http://importlib_metadata.readthedocs.io/
 
 %package license
 Summary: license components for the importlib_metadata package.
@@ -55,6 +86,7 @@ python components for the importlib_metadata package.
 Summary: python3 components for the importlib_metadata package.
 Group: Default
 Requires: python3-core
+Provides: pypi(importlib-metadata)
 
 %description python3
 python3 components for the importlib_metadata package.
@@ -69,7 +101,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580313187
+export SOURCE_DATE_EPOCH=1582937587
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
