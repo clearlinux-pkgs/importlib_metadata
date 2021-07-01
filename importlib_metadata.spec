@@ -22,6 +22,7 @@ BuildRequires : setuptools_scm
 BuildRequires : tox
 BuildRequires : virtualenv
 BuildRequires : zipp
+Provides: importlib-metadata
 
 %description
 .. image:: https://img.shields.io/pypi/v/importlib_metadata.svg
