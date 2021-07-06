@@ -1,0 +1,19 @@
+--- importlib_metadata-4.6.1/importlib_metadata.egg-info/requires.txt~	2021-07-05 00:19:34.000000000 +0000
++++ importlib_metadata-4.6.1/importlib_metadata.egg-info/requires.txt	2021-07-06 17:34:48.004959513 +0000
+@@ -1,4 +1,4 @@
+-zipp>=0.5
++zipp
+ 
+ [:python_version < "3.8"]
+ typing-extensions>=3.6.4
+--- importlib_metadata-4.6.1/setup.cfg~	2021-07-05 00:19:34.000000000 +0000
++++ importlib_metadata-4.6.1/setup.cfg	2021-07-06 17:35:04.660959281 +0000
+@@ -19,7 +19,7 @@
+ include_package_data = true
+ python_requires = >=3.6
+ install_requires = 
+-	zipp>=0.5
++	zipp
+ 	typing-extensions>=3.6.4; python_version < "3.8"
+ 
+ [options.packages.find]

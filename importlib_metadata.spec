@@ -4,7 +4,7 @@
 #
 Name     : importlib_metadata
 Version  : 4.6.1
-Release  : 62
+Release  : 63
 URL      : https://files.pythonhosted.org/packages/a7/08/c5f2e6193c12ceb5b5048d579e8f1f82c9957b57427da808c15b44479dec/importlib_metadata-4.6.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a7/08/c5f2e6193c12ceb5b5048d579e8f1f82c9957b57427da808c15b44479dec/importlib_metadata-4.6.1.tar.gz
 Summary  : Read metadata from Python packages
@@ -23,6 +23,7 @@ BuildRequires : setuptools_scm
 BuildRequires : tox
 BuildRequires : virtualenv
 BuildRequires : zipp
+Patch1: deps.patch
 
 %description
 .. image:: https://img.shields.io/pypi/v/importlib_metadata.svg
@@ -59,13 +60,14 @@ python3 components for the importlib_metadata package.
 %prep
 %setup -q -n importlib_metadata-4.6.1
 cd %{_builddir}/importlib_metadata-4.6.1
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1625582901
+export SOURCE_DATE_EPOCH=1625592981
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
