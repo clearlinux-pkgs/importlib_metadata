@@ -4,7 +4,7 @@
 #
 Name     : importlib_metadata
 Version  : 4.6.1
-Release  : 63
+Release  : 64
 URL      : https://files.pythonhosted.org/packages/a7/08/c5f2e6193c12ceb5b5048d579e8f1f82c9957b57427da808c15b44479dec/importlib_metadata-4.6.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a7/08/c5f2e6193c12ceb5b5048d579e8f1f82c9957b57427da808c15b44479dec/importlib_metadata-4.6.1.tar.gz
 Summary  : Read metadata from Python packages
