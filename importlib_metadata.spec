@@ -14,6 +14,7 @@ Requires: importlib_metadata-license = %{version}-%{release}
 Requires: importlib_metadata-python = %{version}-%{release}
 Requires: importlib_metadata-python3 = %{version}-%{release}
 Requires: zipp
+Provides: importlib-metadata
 BuildRequires : buildreq-distutils3
 BuildRequires : pluggy
 BuildRequires : py-python
